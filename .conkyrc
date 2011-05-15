@@ -15,13 +15,13 @@ $nodename - $sysname $kernel on $machine
 $stippled_hr
 ${color grey}Uptime:$color $uptime ${color grey}- Load:$color $loadavg
 ${color grey}CPU Usage:$color${cpu cpu1}% ${cpubar cpu1}
-${color grey}CPU temperature: $color${hwmon temp 1}°C
+${color grey}CPU temperature: $color${hwmon 0 temp 1}°C${color grey} | $color${hwmon 1 temp 1}°C
 ${color grey}RAM Usage:$color $mem${color grey}/$color$memmax ${color grey}-$color $memperc% ${membar}
 ${color grey}Swap Usage:$color $swap${color grey}/$color$swapmax ${color grey}-$color $swapperc% ${swapbar}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $color$stippled_hr
 ${color grey}AC adapter: $color${acpiacadapter ADP1}
-${color grey}Battery charge level: $color${battery_percent BAT1} %
+${color grey}Battery charge level: $color${battery_percent BAT1}%
 ${if_empty $battery_time}$else${color grey}Time left on battery: $color$battery_time
 $endif${if_up wlan0}$color$stippled_hr
 ${color grey}Wifi ($color${wireless_essid wlan0}${color grey}):
