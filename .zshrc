@@ -93,7 +93,7 @@ fi
 # Aliases
 alias sqlite3='sqlite3 -column'
 alias diff='diff -u'
-alias grep='egrep -n --color=auto'
+alias grep='egrep --color=auto'
 alias ls='ls -F --color'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
 
