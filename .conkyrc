@@ -4,6 +4,9 @@ double_buffer
 draw_shades yes
 if_up_strictness link
 maximum_width 320
+own_window true
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent true
 update_interval 3
 use_xft yes
 xftfont Bitstream Vera Sans Mono:size=7
@@ -14,7 +17,7 @@ TEXT
 $nodename - $sysname $kernel on $machine
 $stippled_hr
 ${color grey}Uptime:$color $uptime ${color grey}- Load:$color $loadavg
-${color grey}CPU Usage:$color${cpu cpu1}% ${cpubar cpu1}
+${color grey}CPU Usage:$color${cpu cpu0}% ${cpubar cpu0}
 ${color grey}CPU temperature: $color${hwmon 0 temp 1}°C${color grey} | $color${hwmon 1 temp 1}°C
 ${color grey}RAM Usage:$color $mem${color grey}/$color$memmax ${color grey}-$color $memperc% ${membar}
 ${color grey}Swap Usage:$color $swap${color grey}/$color$swapmax ${color grey}-$color $swapperc% ${swapbar}
