@@ -58,7 +58,7 @@ zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 # colors
 autoload colors; colors
 
-#eval "`dircolors -b /etc/DIR_COLORS`"
+eval "`dircolors -b /etc/DIR_COLORS`"
 
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
