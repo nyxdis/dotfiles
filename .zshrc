@@ -50,10 +50,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Completion and Prompt
-autoload -U compinit promptinit
+autoload -U compinit
 compinit
-promptinit; prompt gentoo
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+export PROMPT="%. %# "
 
 # colors
 autoload colors; colors
@@ -84,7 +84,7 @@ setopt NO_BEEP
 zshexit() { clear }
 
 # .ssh/known_hosts completion
-if [ -e .ssh/known_hosts ] ; then
+if [ -e ~/.ssh/known_hosts ] ; then
 	local _myhosts
 	_myhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} )
 	zstyle ':completion:*' hosts $_myhosts
