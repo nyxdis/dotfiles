@@ -1,13 +1,6 @@
 # teh profile
 type portageq >/dev/null && EPREFIX=$(portageq envvar EPREFIX)
 [ -e ${EPREFIX}/etc/zsh/zprofile ] && . ${EPREFIX}/etc/zsh/zprofile
-export SSH_ASKPASS="$(whence ssh-askpass-fullscreen)"
-if $(type keychain >/dev/null); then
-	if [ -e ~/.ssh/id_rsa ] || [ -e ~/.ssh/id_dsa ]; then
-		keychain -q ~/.ssh/id_?sa
-	fi
-fi
-[ -d ~/.keychain ] && . ~/.keychain/`hostname`-sh
 
 ulimit -c unlimited
 
