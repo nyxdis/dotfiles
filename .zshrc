@@ -89,6 +89,8 @@ alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias ls='ls -F --color'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
+alias cvsmaster='screen -dm ssh -4MN cvs.gentoo.org'
+alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 
 # History
 HISTSIZE=10000
