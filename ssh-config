@@ -1,0 +1,4 @@
+Host *
+	User angelos
+	ControlPath ~/.ssh/master-%r@%h:%p
+	ControlMaster auto
