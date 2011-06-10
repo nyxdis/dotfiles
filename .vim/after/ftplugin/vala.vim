@@ -1,1 +1,1 @@
-c.vim
+set cindent
