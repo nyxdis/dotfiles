@@ -1,0 +1,8 @@
+URxvt.background:	rgba:1111/1111/1111/dddd
+URxvt.foreground:	rgb:dddd/dddd/dddd
+URxvt.depth:		32
+URxvt.font:		xft:Droid Sans Mono Dotted:size=8
+URxvt.perl-ext-common:	default,matcher
+URxvt.urlLauncher:	/usr/bin/exo-open --type WebBrowser
+URxvt.matcher.button:	1
+URxvt.scrollBar:	off
