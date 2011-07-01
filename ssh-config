@@ -1,4 +1,6 @@
 Host *
 	User angelos
+
+host cvs.gentoo.org
 	ControlPath ~/.ssh/master-%r@%h:%p
 	ControlMaster auto
