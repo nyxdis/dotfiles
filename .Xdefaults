@@ -1,4 +1,4 @@
-URxvt.background:	rgba:1111/1111/1111/dddd
+URxvt.background:	rgba:0000/0000/0000/dddd
 URxvt.foreground:	rgb:dddd/dddd/dddd
 URxvt.depth:		32
 URxvt.font:		xft:Droid Sans Mono Dotted:size=8
