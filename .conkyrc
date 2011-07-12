@@ -2,6 +2,7 @@ alignment tr
 background
 double_buffer
 draw_shades yes
+gap_y 125
 if_up_strictness link
 maximum_width 320
 own_window true
