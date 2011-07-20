@@ -84,13 +84,14 @@ if [ -e ~/.ssh/known_hosts ] ; then
 fi
 
 # Aliases
-alias sqlite3='sqlite3 -column'
+alias cvsmaster='screen -S cvsmaster ssh -4MNv cvs.gentoo.org'
 alias diff='diff -u'
 alias grep='egrep --color=auto'
-alias ls='ls -F --color'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
-alias cvsmaster='screen -S cvsmaster ssh -4MNv cvs.gentoo.org'
+alias ls='ls -F --color'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
+alias rtorrent='screen -S rtorrent rtorrent'
+alias sqlite3='sqlite3 -column'
 
 # History
 HISTSIZE=10000
