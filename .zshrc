@@ -91,7 +91,7 @@ alias leak='valgrind --leak-check=full --show-reachable=yes'
 alias ls='ls -F --color'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
-alias sqlite3='sqlite3 -column'
+alias sqlite3='sqlite3 -column -header'
 
 # History
 HISTSIZE=10000
