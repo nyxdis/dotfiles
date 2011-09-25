@@ -2,7 +2,11 @@
 type portageq >/dev/null && EPREFIX=$(portageq envvar EPREFIX)
 [ -e ${EPREFIX}/etc/zsh/zprofile ] && . ${EPREFIX}/etc/zsh/zprofile
 
+# produce core dumps
 ulimit -c unlimited
+
+# make new files private
+umask 077
 
 export PATH="/home/${USER}/bin:${PATH}"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
