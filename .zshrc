@@ -6,9 +6,9 @@ type portageq >/dev/null && EPREFIX=$(portageq envvar EPREFIX)
 ulimit -c unlimited
 
 # make new files private
-umask 077
+umask 022
 
-export PATH="/home/${USER}/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/android-sdk-linux/tools:${HOME}/android-sdk-linux/platform-tools:${PATH}"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 
