@@ -8,7 +8,7 @@ ulimit -c unlimited
 # make new files private
 umask 022
 
-export PATH="${HOME}/bin:${HOME}/android-sdk-linux/tools:${HOME}/android-sdk-linux/platform-tools:${PATH}"
+export PATH="${HOME}/bin:${HOME}/apps/android-sdk-linux/tools:${HOME}/apps/android-sdk-linux/platform-tools:${PATH}"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 
@@ -55,7 +55,7 @@ export PROMPT="%. %# "
 # colors
 autoload colors; colors
 
-eval "`dircolors -b /etc/DIR_COLORS`"
+#eval "`dircolors -b /etc/DIR_COLORS`"
 
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -92,10 +92,11 @@ alias cvsmaster='screen -S cvsmaster ssh -4MNv cvs.gentoo.org'
 alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
-alias ls='ls -F --color'
+alias ls='ls -F --color=auto'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
+alias mv='mv -i'
 
 # History
 HISTSIZE=10000
