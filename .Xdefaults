@@ -1,8 +1,27 @@
+URxvt.foreground:	#ddd
 URxvt.background:	rgba:0000/0000/0000/dddd
-URxvt.foreground:	rgb:dddd/dddd/dddd
 URxvt.depth:		32
-URxvt.font:		xft:Droid Sans Mono Dotted:size=8
+URxvt.font:		xft:Monospace:size=8
 URxvt.perl-ext-common:	default,matcher
 URxvt.urlLauncher:	/usr/bin/exo-open --type WebBrowser
 URxvt.matcher.button:	1
 URxvt.scrollBar:	off
+URxvt.scrollTtyOutput:	off
+URxvt.scrollTtyKeypress: on
+
+URxvt.color0:		#000000
+URxvt.color1:		#AA0000
+URxvt.color2:		#00AA00
+URxvt.color3:		#AA5500
+URxvt.color4:		#0000AA
+URxvt.color5:		#AA00AA
+URxvt.color6:		#00AAAA
+URxvt.color7:		#AAAAAA
+URxvt.color8:		#555555
+URxvt.color9:		#FF5555
+URxvt.color10:		#55FF55
+URxvt.color11:		#FFFF55
+URxvt.color12:		#5555FF
+URxvt.color13:		#FF55FF
+URxvt.color14:		#55FFFF
+URxvt.color15:		#FFFFFF
