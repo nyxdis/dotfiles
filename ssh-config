@@ -1,5 +1,6 @@
 Host *
 	User angelos
+	AddressFamily inet
 
 host cvs.gentoo.org
 	ControlPath ~/.ssh/master-%r@%h:%p
