@@ -1,6 +1,6 @@
 alignment tr
 background
-double_buffer
+double_buffer yes
 draw_shades yes
 gap_y 125
 if_up_strictness link
@@ -8,7 +8,8 @@ maximum_width 320
 own_window true
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_transparent true
-update_interval 3
+own_window_argb_visual
+update_interval 5
 use_xft yes
 xftfont Bitstream Vera Sans Mono:size=7
 
@@ -16,10 +17,11 @@ xftfont Bitstream Vera Sans Mono:size=7
 #$endif
 TEXT
 $nodename - $sysname $kernel on $machine
+${time %d.%m.%Y %H:%M}
 $stippled_hr
 ${color grey}Uptime:$color $uptime ${color grey}- Load:$color $loadavg
 ${color grey}CPU Usage:$color${cpu cpu0}% ${cpubar cpu0}
-${color grey}CPU temperature: $color${hwmon 0 temp 1}°C${color grey} | $color${hwmon 1 temp 1}°C
+${color grey}CPU temperature: $color${hwmon 0 temp 1}°C${color grey} | $color${hwmon 0 temp 2}°C
 ${color grey}RAM Usage:$color $mem${color grey}/$color$memmax ${color grey}-$color $memperc% ${membar}
 ${color grey}Swap Usage:$color $swap${color grey}/$color$swapmax ${color grey}-$color $swapperc% ${swapbar}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
