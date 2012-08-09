@@ -1,6 +1,9 @@
 # teh profile
-type portageq >/dev/null && EPREFIX=$(portageq envvar EPREFIX)
-[ -e ${EPREFIX}/etc/zsh/zprofile ] && . ${EPREFIX}/etc/zsh/zprofile
+. ${EPREFIX}/etc/zsh/zprofile
+
+# keychain
+#. ~/.keychain/$(uname -n)-sh
+keychain -q ~/.ssh/id_?sa
 
 # produce core dumps
 ulimit -c unlimited
@@ -8,7 +11,7 @@ ulimit -c unlimited
 # make new files private
 umask 022
 
-export PATH="${HOME}/bin:${HOME}/apps/android-sdk-linux/tools:${HOME}/apps/android-sdk-linux/platform-tools:${PATH}"
+export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 
@@ -43,8 +46,10 @@ if [ "$TERM" = "xterm" ] ; then
 fi
 
 # for lame non-UTF8 systems
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+if [[ ${LANG} != *utf8 ]]; then
+	export LANG=en_US.utf8
+	export LC_ALL=en_US.utf8
+fi
 
 # Completion and Prompt
 autoload -U compinit
@@ -88,7 +93,7 @@ if [ -e ~/.ssh/known_hosts ] ; then
 fi
 
 # Aliases
-alias cvsmaster='screen -S cvsmaster ssh -4MNv cvs.gentoo.org'
+alias cvsmaster='ssh -4MNf cvs.gentoo.org'
 alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
@@ -97,6 +102,8 @@ alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
 alias mv='mv -i'
+alias cdrecord='cdrecord -v -eject'
+alias pcheck='pcheck -r portdir -a amd64'
 
 # History
 HISTSIZE=10000
