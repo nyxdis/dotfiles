@@ -2,6 +2,12 @@ Host *
 	User angelos
 	AddressFamily inet
 
-#host cvs.gentoo.org
+host cvs.gentoo.org
 	ControlPath ~/.ssh/master-%r@%h:%p
 	ControlMaster auto
+
+host tunnel
+	HostName 78.46.51.9
+	DynamicForward *:8080
+	Port 443
+	Compression yes
