@@ -3,7 +3,7 @@
 
 # keychain
 #. ~/.keychain/$(uname -n)-sh
-keychain -q ~/.ssh/id_?sa
+eval `keychain -q --eval id_rsa id_dsa`
 
 # produce core dumps
 ulimit -c unlimited
@@ -11,9 +11,11 @@ ulimit -c unlimited
 # make new files private
 umask 022
 
+export EDITOR="vim"
 export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
+export GOPATH="${HOME}/proj/go"
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
@@ -93,17 +95,17 @@ if [ -e ~/.ssh/known_hosts ] ; then
 fi
 
 # Aliases
-alias cvsmaster='ssh -4MNf cvs.gentoo.org'
+alias cdrecord='cdrecord -v -eject'
 alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
 alias ls='ls -F --color=auto'
+alias mv='mv -i'
+alias rm='rm -i'
+alias pcheck='pcheck -r portdir -a amd64'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
-alias mv='mv -i'
-alias cdrecord='cdrecord -v -eject'
-alias pcheck='pcheck -r portdir -a amd64'
 
 # History
 HISTSIZE=10000
