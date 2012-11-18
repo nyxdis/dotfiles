@@ -1,9 +1,11 @@
 # teh profile
 . ${EPREFIX}/etc/zsh/zprofile
 
+# ubuntu command-not-found handler
+[ -f /etc/zsh_command_not_found ] && . /etc/zsh_command_not_found
+
 # keychain
-#. ~/.keychain/$(uname -n)-sh
-eval `keychain -q --eval id_rsa id_dsa`
+[ $(whence keychain) ] && eval `keychain -q --eval id_rsa id_dsa`
 
 # produce core dumps
 ulimit -c unlimited
@@ -12,10 +14,10 @@ ulimit -c unlimited
 umask 022
 
 export EDITOR="vim"
-export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}"
-export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
+export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GOPATH="${HOME}/proj/go"
+export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools"
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
