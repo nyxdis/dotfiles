@@ -16,3 +16,10 @@ au BufRead,BufNewFile *.vapi            setfiletype vala
 
 " go to opening/closing brace, and type %= to indent everything in between
 noremap % v%
+
+function Gofmt()
+	let regel=line(".")
+	%!gofmt
+	call cursor(regel, 1)
+endfunction
+autocmd Filetype go command! Fmt call Gofmt()
