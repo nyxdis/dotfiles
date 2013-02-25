@@ -1,3 +1,11 @@
+host router
+	HostName tomato.lan
+	User root
+
+host rpi
+	HostName raspbmc.local
+	User pi
+
 Host *
 	User angelos
 	AddressFamily inet
