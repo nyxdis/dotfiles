@@ -23,3 +23,4 @@ function Gofmt()
 	call cursor(regel, 1)
 endfunction
 autocmd Filetype go command! Fmt call Gofmt()
+autocmd BufWritePre *.go call Gofmt()
