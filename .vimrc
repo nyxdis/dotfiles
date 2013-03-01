@@ -5,6 +5,7 @@ set smartcase
 set exrc
 set secure
 set bg=dark
+set hlsearch
 match Todo /\s\+$/
 
 set directory^=$HOME/.vim_swap//
