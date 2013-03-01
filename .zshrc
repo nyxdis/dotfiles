@@ -19,6 +19,8 @@ export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GOPATH="${HOME}/proj/go"
 export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools"
+export LESS="-R"
+eval "$(lesspipe)"
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
@@ -103,12 +105,15 @@ alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
 alias ls='ls -F --color=auto'
+alias ll='ls -l'
+alias la='ls -lA'
 alias mv='mv -i'
 alias rm='rm -i'
 alias pcheck='pcheck -r portdir -a amd64'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
+alias cnl='ssh -Nf -L9666:localhost:9666 rpi'
 
 # History
 HISTSIZE=10000
