@@ -3,8 +3,8 @@ host router
 	User root
 
 host rpi
-	HostName xbian.local
-	User xbian
+	HostName xbmc.local
+	User pi
 
 Host *
 	User angelos

@@ -13,7 +13,7 @@ ulimit -c unlimited
 # make new files private
 umask 022
 
-export MPD_HOST=raspbmc.local
+export MPD_HOST=xbmc.local
 export EDITOR="vim"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
