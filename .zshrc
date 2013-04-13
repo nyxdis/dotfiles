@@ -20,7 +20,7 @@ export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GOPATH="${HOME}/proj/go"
 export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools"
 export LESS="-R"
-eval "$(lesspipe)"
+#eval "$(lesspipe)"
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
@@ -38,7 +38,7 @@ if [ "$TERM" = "xterm" ] ; then
         fi
     else
         case "$COLORTERM" in
-            gnome-terminal|Terminal)
+            gnome-terminal|Terminal|xfce4-terminal)
                 # Those crafty Gnome folks require you to check COLORTERM,
                 # but don't allow you to just *favor* the setting over TERM.
                 # Instead you need to compare it and perform some guesses
@@ -53,7 +53,7 @@ if [ "$TERM" = "xterm" ] ; then
 fi
 
 # for lame non-UTF8 systems
-if [[ ${LANG} != *utf8 ]]; then
+if [[ ${LANG} != *utf8 ]] && [[ ${LANG} != *UTF-8 ]]; then
 	export LANG=en_US.utf8
 	export LC_ALL=en_US.utf8
 fi
@@ -114,6 +114,7 @@ alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
 alias cnl='ssh -Nf -L9666:localhost:9666 rpi'
+alias autopurge="dpkg -l | awk '/^rc/ { print \$2 }' | xargs sudo dpkg --purge"
 
 # History
 HISTSIZE=10000
