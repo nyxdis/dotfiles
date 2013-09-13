@@ -1,66 +1,48 @@
 servers = (
-  { address = "irc.stealth.net"; chatnet = "IRCnet"; port = "6668"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   {
-    address = "eris.zakx.de";
-    chatnet = "hackthenet";
+    address = "irc.yolo.pro";
+    chatnet = "hackint";
     port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "no";
+  },
+  {
+    address = "chat.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
     use_ssl = "yes";
     ssl_verify = "no";
   }
 );
 
-chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
-  hackthenet = { type = "IRC"; };
-};
+chatnets = { hackint = { type = "IRC"; }; freenode = { type = "IRC"; }; };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; }
+  { name = "#dystopia"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#evility"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#hackint"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#foobot"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#ircnets"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#services"; chatnet = "hackint"; autojoin = "yes"; },
+  { name = "#gentoo-pr0n"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#entrepr0neur"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#b0tcage"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#android-dev"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#gentoo-amd64"; chatnet = "freenode"; autojoin = "yes"; },
+  { 
+    name = "#gentoo-amd64-dev";
+    chatnet = "freenode";
+    autojoin = "yes";
+  },
+  { name = "#gentoo-commits"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#gentoo-desktop"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#gentoo-dev"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#gentoo-releng"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#gentoo-wiki"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#mpd-dev"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#scmpc"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xfce"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#xfce-dev"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -109,9 +91,8 @@ aliases = {
   "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
   EXEMPTLIST = "mode $C +e";
   ATAG = "WINDOW SERVER";
-  afk = "kill $0 /nick ist kein Ersatz für /away";
-  operwall = "quote operwall :";
-  kline = "^msg winb0t kline";
+  UNSET = "set -clear";
+  RESET = "set -default";
 };
 
 statusbar = {
@@ -139,7 +120,7 @@ statusbar = {
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
     topic = " $topic";
-    topic_empty = " Irssi v$J - http://irssi.org/help/";
+    topic_empty = " Irssi v$J - http://www.irssi.org";
 
     # all of these treated specially, they're only displayed when needed
     lag = "{sb Lag: $0-}";
@@ -230,54 +211,18 @@ settings = {
     real_name = "Christoph Mende";
     user_name = "angelos";
     nick = "angelos";
-    hostname = "";
     timestamp_format = "%d/%H%M%S";
-    recode_fallback = "iso8859-15";
-    log_create_mode = "644";
   };
   "fe-text" = {
     actlist_sort = "refnum";
     scrollback_time = "7days";
     scrollback_lines = "5000";
   };
-  "irc/core" = { alternate_nick = "cmende"; };
   "fe-common/core" = {
-    autocreate_own_query = "yes";
     activity_hide_level = "JOIN QUIT NICK PART TOPIC MODE";
-    activity_hide_targets = "#xbins #scc-announce";
-    term_charset = "utf-8";
-    autocreate_query_level = "MSGS DCCMSGS";
-  };
-  "perl/core/scripts" = {
-    mpd_host = "angelos.is-a-geek.org";
-    lastfm_user = "angelos";
-    lastfm_use_action = "no";
-    lastfm_get_player = "no";
-    lastfm_output = "np: %artist - %name";
-    screen_away_message = "afk";
-    email_privmsgs_from_address = "irssi@thor.ngls.eu";
-    email_privmsgs_to_address = "angelos@unkreativ.org";
-  };
-  "irc/dcc" = { dcc_own_ip = "78.46.51.9"; };
-};
-logs = {
-  "~/public_html/pre.log" = {
-    level = "ALL";
-    items = ( { type = "target"; name = "#scc-pre"; } );
   };
 };
 keyboard = (
   { key = "meta-p"; id = "change_window"; data = "20"; },
   { key = "meta-z"; id = "change_window"; data = "16"; }
-);
-hilights = (
-  { text = "the german overlord"; nick = "yes"; word = "yes"; }
-);
-ignores = (
-  {
-    mask = "PRE";
-    level = "ALL";
-    exception = "yes";
-    channels = ( "#scc-pre" );
-  }
 );
