@@ -7,7 +7,7 @@
 	branch = auto
 [push]
 	default = current
-[core]
-	eol = native
 [help]
 	autocorrect = 1
+[core]
+	autocrlf = input
