@@ -1,17 +1,17 @@
-host router
-	HostName tomato.lan
+Host rpi
+	HostName openelec.local
 	User root
 
-host rpi
-	HostName xbmc.local
-	User pi
-
-host cvs.gentoo.org
+Host cvs.gentoo.org
 	ControlPath ~/.ssh/master-%r@%h:%p
 	ControlMaster auto
+	ControlPersist 600
 
-host tunnel
+Host tunnel
 	HostName 78.46.51.9
 	DynamicForward *:8080
 	Port 443
 	Compression yes
+
+Host dev.gentoo.org
+	User angelos
