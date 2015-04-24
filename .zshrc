@@ -10,21 +10,22 @@
 # produce core dumps
 ulimit -c unlimited
 
-# make new files private
-umask 022
-
-export MPD_HOST=xbmc.local
 export EDITOR="vim"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
 export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GOPATH="${HOME}/proj/go"
-export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools"
+export GRADLE_HOME="${HOME}/gradle-2.1"
 export LESS="-R"
+export MPD_HOST=raspbmc.local
+export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools:${GRADLE_HOME}/bin:/usr/local/heroku/bin"
+export VDPAU_DRIVER="va_gl"
 #eval "$(lesspipe)"
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
-        if [ -z "$XTERM_VERSION" ] ; then
+        if [ -n "$VTE_VERSION" ] ; then
+            TERM="gnome-256color"
+        elif [ -z "$XTERM_VERSION" ] ; then
             echo "Warning: Terminal wrongly calling itself 'xterm'."
         else
             case "$XTERM_VERSION" in
@@ -58,29 +59,40 @@ if [[ ${LANG} != *utf8 ]] && [[ ${LANG} != *UTF-8 ]]; then
 	export LC_ALL=en_US.utf8
 fi
 
-# Completion and Prompt
+# Completion
 autoload -U compinit
 compinit
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-export PROMPT="%. %# "
 
 # colors
-autoload colors; colors
+#autoload colors; colors
 
-#eval "`dircolors -b /etc/DIR_COLORS`"
+eval `dircolors -b ~/.dircolors-256dark`
 
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Completion Cache
-zstyle ':completion::complete:*' use-cache 1
+#zstyle ':completion::complete:*' use-cache 1
+
+# Prompt
+#export PROMPT="%. %# "
+autoload -U promptinit
+promptinit
+
+prompt gentoo
+
 
 ## Options
 # Changing Directories
 setopt AUTO_CD PUSHD_TO_HOME
 # History
-setopt APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_FCNTL_LOCK
-setopt HIST_REDUCE_BLANKS SHARE_HISTORY
+setopt APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_ALL_DUPS
+# nasty bug that hangs new shells
+if ! [ $ZSH_VERSION = 5.0.6 ]; then
+	setopt HIST_FCNTL_LOCK
+fi
+setopt HIST_REDUCE_BLANKS SHARE_HISTORY HIST_IGNORE_SPACE
 # Initialisation
 setopt RCS
 # Input/Output
@@ -100,7 +112,7 @@ if [ -e ~/.ssh/known_hosts ] ; then
 fi
 
 # Aliases
-alias cdrecord='cdrecord -v -eject'
+alias cdrecord='cdrecord -v -eject dev=/dev/sr0'
 alias diff='diff -u'
 alias grep='egrep --color=auto'
 alias leak='valgrind --leak-check=full --show-reachable=yes'
@@ -108,6 +120,7 @@ alias ls='ls -F --color=auto'
 alias ll='ls -l'
 alias la='ls -lA'
 alias mv='mv -i'
+alias cp='cp -i'
 alias rm='rm -i'
 alias pcheck='pcheck -r portdir -a amd64'
 alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
