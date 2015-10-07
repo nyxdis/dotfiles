@@ -1,17 +1,2 @@
-Host rpi
-	HostName openelec.local
-	User root
-
-Host cvs.gentoo.org
-	ControlPath ~/.ssh/master-%r@%h:%p
-	ControlMaster auto
-	ControlPersist 600
-
-Host tunnel
-	HostName 78.46.51.9
-	DynamicForward *:8080
-	Port 443
-	Compression yes
-
 Host dev.gentoo.org
 	User angelos
