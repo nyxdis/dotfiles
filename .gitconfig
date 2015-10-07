@@ -1,6 +1,7 @@
 [user]
 	email = mende.christoph@gmail.com
 	name = Christoph Mende
+	signingkey = 0x3A12DE31
 [color]
 	diff = auto
 	status = auto
