@@ -11,7 +11,7 @@ own_window_transparent true
 own_window_argb_visual
 update_interval 5
 use_xft yes
-xftfont Droid Sans Mono:size=8
+xftfont Droid Sans:size=9
 
 #${if_mounted /mnt/storage}/mnt/storage $color${fs_used /mnt/storage}${color grey}/$color${fs_size /mnt/storage} ${color grey}${fs_bar /mnt/storage}$endif
 #${color grey}AC adapter: $color${acpiacadapter ADP1}
