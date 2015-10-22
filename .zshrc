@@ -16,7 +16,7 @@ export GENTOO_AUTHOR_NAME="Christoph Mende"
 export GOPATH="${HOME}/proj/go"
 export GRADLE_HOME="${HOME}/gradle-2.1"
 export LESS="-R"
-export MPD_HOST=raspbmc.local
+#export MPD_HOST=raspbmc.local
 export PATH="${HOME}/bin:${HOME}/apps/android-sdk/tools:${HOME}/apps/android-sdk/platform-tools:${PATH}:${GOPATH}/bin:${HOME}/src/depot_tools:${GRADLE_HOME}/bin:/usr/local/heroku/bin"
 export VDPAU_DRIVER="va_gl"
 #eval "$(lesspipe)"
