@@ -1,0 +1,2 @@
+# busybox fails to resolve hostnames when compiled statically against glibc-2.21-r1
+sys-apps/busybox -static

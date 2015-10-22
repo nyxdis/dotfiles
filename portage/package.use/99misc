@@ -1,0 +1,40 @@
+# required by dev-qt/qtcore-5.4.2::gentoo
+# required by dev-qt/qtwidgets-5.4.2::gentoo
+# required by media-sound/quimup-1.4.0::gentoo
+# required by media-sound/quimup (argument)
+>=dev-libs/libpcre-8.37-r2 pcre16
+# required by net-misc/gtkvncviewer-0.4::gentoo
+# required by net-misc/gtkvncviewer (argument)
+>=net-libs/gtk-vnc-0.5.4 python
+
+# required by x11-libs/cairo-1.14.2-r1::gentoo
+# required by x11-libs/pango-1.36.8-r1::gentoo
+# required by www-client/google-chrome-45.0.2454.101_p1::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-libs/binutils-libs-2.25.1-r1 abi_x86_32
+
+# required by net-fs/samba-4.2.4-r1::gentoo
+# required by samba (argument)
+>=sys-libs/ntdb-1.0-r1 python
+# required by sys-libs/ldb-1.1.21::gentoo
+# required by net-fs/samba-4.2.4-r1::gentoo
+# required by samba (argument)
+>=sys-libs/tdb-1.3.7 python
+# required by sys-libs/ldb-1.1.21::gentoo
+# required by net-fs/samba-4.2.4-r1::gentoo
+# required by samba (argument)
+>=sys-libs/tevent-0.9.25 python
+
+app-admin/conky wifi
+app-crypt/pinentry gnome-keyring
+app-portage/layman sync-plugin-portage
+gnome-base/gvfs mtp
+media-sound/ncmpc colors
+net-dns/avahi autoipd
+net-fs/cifs-utils creds
+net-misc/iputils -caps -filecaps
+net-misc/iputils traceroute tracepath
+sys-kernel/gentoo-sources symlink
+x11-drivers/nvidia-drivers -tools
+x11-misc/lightdm -gnome

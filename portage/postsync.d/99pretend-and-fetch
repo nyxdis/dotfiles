@@ -1,0 +1,4 @@
+#!/bin/sh
+
+emerge -pvuDN @world
+emerge -fquDN @world

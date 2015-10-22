@@ -1,0 +1,15 @@
+dev-util/xfce4-dev-tools **
+xfce-base/exo **
+xfce-base/garcon **
+xfce-base/libxfce4ui **
+xfce-base/libxfce4util **
+xfce-base/thunar **
+xfce-base/xfce4-appfinder **
+xfce-base/xfce4-meta **
+xfce-base/xfce4-panel **
+xfce-base/xfce4-session **
+xfce-base/xfce4-settings **
+xfce-base/xfconf **
+xfce-base/xfdesktop **
+xfce-base/xfwm4 **
+xfce-extra/xfce4-power-manager **

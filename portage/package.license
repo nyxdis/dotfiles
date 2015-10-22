@@ -1,0 +1,4 @@
+# required by google-chrome (argument)
+>=www-client/google-chrome-45.0.2454.85_p1 google-chrome
+# required by teamviewer (argument)
+>=net-misc/teamviewer-10.0.41499-r1 TeamViewer
