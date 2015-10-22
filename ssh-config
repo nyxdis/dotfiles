@@ -1,2 +1,3 @@
-Host dev.gentoo.org
+Host dgo
+	HostName dev.gentoo.org
 	User angelos
