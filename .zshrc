@@ -8,7 +8,7 @@
 [ $(whence keychain) ] && eval `keychain -q --eval id_rsa id_dsa`
 
 # produce core dumps
-ulimit -c unlimited
+#ulimit -c unlimited
 
 export EDITOR="vim"
 export GENTOO_AUTHOR_EMAIL="angelos@gentoo.org"
@@ -65,7 +65,7 @@ compinit
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 
 # colors
-#autoload colors; colors
+autoload -Uz colors && colors
 
 eval `dircolors -b ~/.dircolors-256dark`
 
@@ -76,11 +76,11 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion::complete:*' use-cache 1
 
 # Prompt
+export PROMPT="%{%B%2F%}%n@%m%{%f%b%}:%{%B%4F%}%~%{%b%f%}%# "
 #export PROMPT="%. %# "
-autoload -U promptinit
-promptinit
-
-prompt gentoo
+#autoload -U promptinit
+#promptinit
+#prompt gentoo
 
 
 ## Options
