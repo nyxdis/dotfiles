@@ -18,7 +18,7 @@ export GRADLE_HOME="${HOME}/gradle-2.1"
 export LESS="-R"
 #export MPD_HOST=raspbmc.local
 export PATH="${HOME}/bin:${HOME}/.local/bin:${GOPATH}/bin:${GRADLE_HOME}/bin:${PATH}"
-export VDPAU_DRIVER="va_gl"
+#export VDPAU_DRIVER="va_gl"
 #eval "$(lesspipe)"
 
 if [ "$TERM" = "xterm" ] ; then
