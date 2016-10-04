@@ -1,3 +1,7 @@
+Host rpi
+	Hostname ngls.eu
+	Port 2222
+
 Host dgo
 	HostName dev.gentoo.org
 	User angelos
