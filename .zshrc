@@ -127,7 +127,7 @@ alias rec='ffmpeg -f video4linux2 -i /dev/video0 tmp.mpeg'
 alias rtorrent='screen -S rtorrent rtorrent'
 alias sqlite3='sqlite3 -column -header'
 alias cnl='ssh -Nf -L9666:localhost:9666 rpi'
-alias autopurge="dpkg -l | awk '/^rc/ { print \$2 }' | xargs sudo dpkg --purge"
+alias autopurge="dpkg -l | egrep -q ^rc && dpkg -l | awk '/^rc/ { print \$2 }' | xargs sudo dpkg --purge"
 
 # History
 HISTSIZE=10000
