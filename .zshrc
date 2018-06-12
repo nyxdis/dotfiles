@@ -4,6 +4,9 @@
 # ubuntu command-not-found handler
 [ -f /etc/zsh_command_not_found ] && . /etc/zsh_command_not_found
 
+# python virtualenvwrapper
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && . /usr/local/bin/virtualenvwrapper.sh
+
 # keychain
 [ $(whence keychain) ] && eval `keychain -q --eval id_rsa id_dsa`
 
