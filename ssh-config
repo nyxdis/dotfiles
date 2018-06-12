@@ -1,5 +1,10 @@
-Host rpi
-	Hostname ngls.eu
+User christoph
+
+Host mimas
+	Hostname mimas.ngls.eu
+
+Host io
+	Hostname io.ngls.eu
 	Port 2222
 
 Host dgo
