@@ -8,7 +8,7 @@
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && . /usr/local/bin/virtualenvwrapper.sh
 
 # keychain
-[ $(whence keychain) ] && eval `keychain -q --eval id_rsa id_dsa`
+[ $(whence keychain) ] && eval `keychain --quiet --ignore-missing --eval id_rsa id_dsa`
 
 # produce core dumps
 #ulimit -c unlimited
