@@ -1,0 +1,10 @@
+Host beeblebrox ngls.eu
+    ForwardAgent true
+
+Host streamy
+    Hostname streamybois.eu
+    User streamyvideos
+
+Host aws
+    Hostname aws.ngls.eu
+    User ec2-user
