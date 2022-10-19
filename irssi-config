@@ -1,21 +1,25 @@
 servers = (
   {
-    address = "irc.yolo.pro";
+    address = "irc.eu.hackint.org";
     chatnet = "hackint";
     port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
+    use_tls = "yes";
+    tls_cert = "~/.irssi/irssi.pem";
+    tls_verify = "no";
+    family = "inet6";
   },
   {
-    address = "chat.freenode.net";
-    chatnet = "freenode";
+    address = "irc.eu.libera.chat";
+    chatnet = "libera";
     port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
+    use_tls = "yes";
+    tls_cert = "~/.irssi/irssi.pem";
+    tls_verify = "no";
+    family = "inet6";
   }
 );
 
-chatnets = { hackint = { type = "IRC"; }; freenode = { type = "IRC"; }; };
+chatnets = { hackint = { type = "IRC"; }; libera = { type = "IRC"; }; };
 
 channels = (
   { name = "#dystopia"; chatnet = "hackint"; autojoin = "yes"; },
@@ -24,25 +28,21 @@ channels = (
   { name = "#foobot"; chatnet = "hackint"; autojoin = "yes"; },
   { name = "#ircnets"; chatnet = "hackint"; autojoin = "yes"; },
   { name = "#services"; chatnet = "hackint"; autojoin = "yes"; },
-  { name = "#gentoo-pr0n"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#entrepr0neur"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#b0tcage"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#android-dev"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#gentoo-amd64"; chatnet = "freenode"; autojoin = "yes"; },
-  { 
-    name = "#gentoo-amd64-dev";
-    chatnet = "freenode";
-    autojoin = "yes";
-  },
-  { name = "#gentoo-commits"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#gentoo-desktop"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#gentoo-dev"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#gentoo-releng"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#gentoo-wiki"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#mpd-dev"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#scmpc"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#xfce"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#xfce-dev"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#gentoo-pr0n"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#entrepr0neur"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#b0tcage"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#android-dev"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-amd64"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-amd64-dev"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-commits"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-desktop"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-dev"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-releng"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#gentoo-wiki"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#mpd-dev"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#scmpc"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#xfce"; chatnet = "libera"; autojoin = "yes"; },
+  { name = "#xfce-dev"; chatnet = "libera"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -221,6 +221,7 @@ settings = {
   "fe-common/core" = {
     activity_hide_level = "JOIN QUIT NICK PART TOPIC MODE";
   };
+  "irc/core" = { alternate_nick = "nglsr"; };
 };
 keyboard = (
   { key = "meta-p"; id = "change_window"; data = "20"; },
@@ -274,7 +275,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-pr0n";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -284,7 +285,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#entrepr0neur";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -294,7 +295,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#b0tcage";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -304,7 +305,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-amd64";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -314,7 +315,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-amd64-dev";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -324,7 +325,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-commits";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -334,7 +335,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-desktop";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -344,7 +345,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-dev";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -354,7 +355,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-releng";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -364,7 +365,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gentoo-wiki";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -374,7 +375,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#mpd-dev";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -384,7 +385,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#scmpc";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -394,7 +395,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#xfce";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
@@ -404,7 +405,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#xfce-dev";
-        tag = "freenode";
+        tag = "libera";
       }
     );
   };
