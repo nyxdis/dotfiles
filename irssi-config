@@ -1,11 +1,11 @@
 servers = (
   {
-    address = "irc.eu.hackint.org";
+    address = "irc.de.hackint.org";
     chatnet = "hackint";
     port = "6697";
     use_tls = "yes";
     tls_cert = "~/.irssi/irssi.pem";
-    tls_verify = "no";
+    tls_verify = "yes";
     family = "inet6";
   },
   {
@@ -14,12 +14,15 @@ servers = (
     port = "6697";
     use_tls = "yes";
     tls_cert = "~/.irssi/irssi.pem";
-    tls_verify = "no";
+    tls_verify = "yes";
     family = "inet6";
   }
 );
 
-chatnets = { hackint = { type = "IRC"; }; libera = { type = "IRC"; }; };
+chatnets = {
+  hackint = { type = "IRC"; usermode = "+x"; };
+  libera = { type = "IRC"; };
+};
 
 channels = (
   { name = "#dystopia"; chatnet = "hackint"; autojoin = "yes"; },
